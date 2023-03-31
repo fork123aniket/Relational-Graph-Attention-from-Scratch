@@ -63,4 +63,5 @@ More in-depth information about this implementation is available on [***PyTorch 
 ### Data
 Though the `example.py` file contains the path to one of the relational entities graphs (`AIFB`), this implementation works for other heterogeneous graph datasets such as `MUTAG`, `BGS`, `AM`, etc. The `AIFB` dataset contains no. of nodes (`8285`), edges (`58086`), and classes (`4`).
 ### Training and Testing
-To train and test ***RGATs*** on heterogeneous graphs, run `example.py`, and this file, after every epoch, prints `train` as well `test` accuracies.
+- The layer implementation can be seen inside `rgat_conv.py`.
+- To train and test ***RGATs*** on heterogeneous graphs, run `example.py`, and this file, after every epoch, prints `train` as well `test` accuracies.
