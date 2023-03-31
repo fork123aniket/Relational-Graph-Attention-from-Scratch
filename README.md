@@ -1,6 +1,6 @@
 # Relational Graph Attention from Scratch
 
-This repository provides Relational (heterogeneous) Graph Attention (***RGAT***) operator implementation from scratch. This implementation is, as the name suggests, meant only for relational (simple/property/attributed) graphs. Here, two schemes have been implemented to compute attention logits $\mathbf{a}^{(r)}_{i,j}$ for each relation type r:-
+This repository provides Relational (heterogeneous) Graph Attention (***RGAT***) operator implementation from scratch. This implementation is, as the name suggests, meant only for relational (simple/property/attributed) graphs. Here, two schemes have been implemented to compute attention logits $\mathbf{a}^{(r)}_{i,j}$ for each relation type ***r***:-
 
 ***Additive attention***
 ```math
