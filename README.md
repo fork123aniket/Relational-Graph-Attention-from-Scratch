@@ -29,7 +29,7 @@ Two different attention mechanisms have also been provided:-
 	        \exp(\mathbf{a}^{(r^{\prime})}_{i,k})}
 
 ```
-To ensure better discriminative power for RGATs, the following options have also been made available:-
+To ensure better discriminative power for ***RGATs***, the following options have also been made available:-
 -	***additive:***  
 ```math
 \mathbf{x}^{{\prime}(r)}_i =
@@ -63,4 +63,4 @@ More in-depth information about this implementation is available on [***PyTorch 
 ### Data
 Though the `example.py` file contains the path to one of the relational entities graphs (`AIFB`), this implementation works for other heterogeneous graph datasets such as `MUTAG`, `BGS`, `AM`, etc. The `AIFB` dataset contains no. of nodes (`8285`), edges (`58086`), and classes (`4`).
 ### Training and Testing
-To train and test RGATs on heterogeneous graphs, run `example.py`, and this file, after every epoch, prints `train` as well `test` accuracies.
+To train and test ***RGATs*** on heterogeneous graphs, run `example.py`, and this file, after every epoch, prints `train` as well `test` accuracies.
