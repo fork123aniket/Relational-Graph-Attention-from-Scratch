@@ -1,6 +1,6 @@
 # Relational Graph Attention from Scratch
 
-This repository provides Relational (heterogeneous) Graph Attention (***RGAT***) operator implementation from scratch. This implementation is, as the name suggests, meant only for relational (simple/property/attributed) graphs. Here, two schemes have been implemented to compute attention logits $\mathbf{a}^{(r)}_{i,j}$ for each relation type ***r***:-
+This repository provides Relational (heterogeneous) Graph Attention (***RGAT***) operator implementation from scratch. This implementation is, as the name suggests, meant only for relational (simple/property/attributed) graphs. Here, two schemes have been implemented to compute attention logits $\mathbf{a}^{(r)}_{i,j}$ for each relation type $r \in \mathcal{R}$:-
 
 ***Additive attention***
 ```math
@@ -12,6 +12,15 @@ or ***multiplicative attention***
 ```math
 \mathbf{a}^{(r)}_{i,j} = \mathbf{q}^{(r)}_i \cdot \mathbf{k}^{(r)}_j
 ```
+where:
+```math
+q^{(r)}_i = g^{(r)}_i \mathbf{Q}^{(r)} \in \mathbb{R}^D
+```
+```math
+k^{(r)}_i = g^{(r)}_i \mathbf{K}^{(r)} \in \mathbb{R}^D
+```
+Here, $\mathbf{Q}^{(r)} \in \mathbb{R}^{F’ \times D}$ is the query kernel, $\mathbf{K}^{(r)} \in \mathbb{R}^{F’ \times D}$ is the key kernel, and $g^{(r)}_i$ is the intermediate relation type-based representations. Moreover, $F^\prime$ is the new feature dimensionality and D is the output dimension size.
+
 Two different attention mechanisms have also been provided:-
 -	***Within-relation attention mechanism***
 ```math
@@ -55,6 +64,7 @@ To ensure better discriminative power for ***RGATs***, the following options hav
 	        |\mathcal{N}_r(i)| \odot \sum_{j \in \mathcal{N}_r(i)}
 	        \alpha^{(r)}_{i,j} \mathbf{x}^{(r)}_j
 ```
+where $|\mathcal{N}_r(i)|$ represents the cardinality of the neighborhood of $i^{th}$ node having relation type $r$ and $\mathcal{W} \in \mathbb{R}^{N \times N}$ is a non-zero matrix with dimensionality N (number of nodes).
 More in-depth information about this implementation is available on [***PyTorch Geometric Official Website***](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.RGATConv.html#torch_geometric.nn.conv.RGATConv).
 ## Requirements
 -	`PyTorch`
